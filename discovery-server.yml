@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: SP_9_MicroServices_DiscoveryServer
+
+server:
+  port: 8761
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
