@@ -8,8 +8,8 @@ spring:
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/api/product/**
+            - Path=/product/**
         - id: order-service
           uri: lb://order-service
           predicates:
-            - Path=/api/order/**
+            - Path=/order/**
