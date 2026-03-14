@@ -4,16 +4,18 @@ server:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: movie-service
-          uri: lb://movie-service
-          predicates:
-            - Path=/movies/**
+      server:
+        webflux:
+          routes:
+            - id: movie-service
+              uri: lb://movie-service
+              predicates:
+                - Path=/movies/**
 
-        - id: booking-service
-          uri: lb://booking-service
-          predicates:
-            - Path=/bookings/**
+            - id: booking-service
+              uri: lb://booking-service
+              predicates:
+                - Path=/bookings/**
 
 management:
   endpoints:
