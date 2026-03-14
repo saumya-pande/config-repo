@@ -10,12 +10,12 @@ management:
     sampling:
       probability: 1.0
 
+
 resilience4j:
   circuitbreaker:
     instances:
-      movieService:
-        registerHealthIndicator: true
-        slidingWindowSize: 5
-        failureRateThreshold: 50
-        waitDurationInOpenState: 10s
-        permittedNumberOfCallsInHalfOpenState: 3
+      movie-service:
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 5
+        sliding-window-size: 10
+        wait-duration-in-open-state: 10s
