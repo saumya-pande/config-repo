@@ -4,7 +4,7 @@ server:
 resilience4j:
   circuitbreaker:
     instances:
-      movieService:
+      movie-service:
         register-health-indicator: true
         failure-rate-threshold: 50
         minimum-number-of-calls: 5
