@@ -1,19 +1,14 @@
 server:
-  port: 8085
+  port: 8082
 
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: movie-service
-          uri: lb://movie-service
-          predicates:
-            - Path=/movies/**
-
-        - id: booking-service
-          uri: lb://booking-service
-          predicates:
-            - Path=/bookings/**
+resilience4j:
+  circuitbreaker:
+    instances:
+      movieService:
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 5
+        sliding-window-size: 10
+        wait-duration-in-open-state: 10s
 
 management:
   endpoints:
