@@ -4,10 +4,10 @@ server:
 resilience4j:
   circuitbreaker:
     instances:
-      movie-service:
+      MovieClientgetMovieByIdlong:
         register-health-indicator: true
         failure-rate-threshold: 50
-        minimum-number-of-calls: 5
+        minimum-number-of-calls: 3
         sliding-window-size: 10
         wait-duration-in-open-state: 10s
 
