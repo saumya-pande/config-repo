@@ -16,6 +16,6 @@ spring:
               predicates:
                 - Path=/orders/**
             -id: restaurant-service
-            uri : lb://restaurant-service
-            predicates: 
+             uri : lb://restaurant-service
+             predicates: 
                 -Path=/restaurants/**
