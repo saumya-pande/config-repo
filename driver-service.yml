@@ -3,7 +3,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/driverdb
+    url: jdbc:mysql://localhost:3306/driverdb?createDatabaseIfNotExist=true
     username: root
     password: 3141@MySQL
   jpa:
